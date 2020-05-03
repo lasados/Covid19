@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 
 DEFAULT_PATHS = {
-    'PATH_COVID': r"E:\Practice\Challenges\ODS\covid19\Equation models\csse_covid_19_time_series",
+    'PATH_COVID': r"E:\Practice\Challenges\ODS\covid19\Compartmental models\csse_covid_19_time_series",
     'CONFIRMED_FILENAME': r"\time_series_covid19_confirmed_global.csv",
     'DEATHS_FILENAME': r"\time_series_covid19_deaths_global.csv",
     'RECOVERED_FILENAME': r"\time_series_covid19_recovered_global.csv",
-    'PATH_COUNTRIES': r"E:\Practice\Challenges\ODS\covid19\Equation models\countries",
+    'PATH_COUNTRIES': r"E:\Practice\Challenges\ODS\covid19\Compartmental models\countries",
     'COUNTRIES_FILENAME': r"\countries.csv"
 }
 

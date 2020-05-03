@@ -188,7 +188,7 @@ class SIR:
         self._opt_parameters, self._train_loss = self._optimize(info)
         return self
 
-    def predict(self, T_pred=None, train_size=None):
+    def predict(self, T_pred=None):
         if T_pred is None:
             T_pred = len(self._I_true)
         try:
