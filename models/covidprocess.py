@@ -12,13 +12,29 @@ DEFAULT_PATHS = {
 
 
 class DataCovid:
-
+    """ Class of simple data extraction from csv files."""
     def __init__(self, country_name='Russia', country_code='RUS'):
+        """
+        Sometimes there may be no matches.
+        Try to find the country in the file manually in case of unsuccessful search.
+
+        Arguments:
+            country_name - utf-8 string
+            country_code - utf-8 string, Alpha-3 code.
+
+        """
         self._country_name = country_name
         self._country_code = country_code.upper()
         assert (len(country_code) == 3) or (), 'Not Alpha-3 code'
 
     def read(self, default_paths=None):
+        """
+        Read and extract data only for one country.
+
+        Arguments:
+            default_paths - dictionary with paths to data
+
+        """
         if default_paths is None:
             default_paths = DEFAULT_PATHS
 
@@ -49,7 +65,7 @@ class DataCovid:
         country = countries_data[countries_data['iso_alpha3'] == country_code]
         population = int(country['population'].values)
 
-        # Find first case of infection in timeseries data
+        # Find first case of infection in time series data
         first_case_date = ''
         for column in confirmed.columns[5:]:
             if confirmed[column].values[0] > 0:
