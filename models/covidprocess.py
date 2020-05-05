@@ -35,6 +35,7 @@ class DataCovid:
             default_paths - dictionary with paths to data
 
         """
+        print('Reading data...')
         if default_paths is None:
             default_paths = DEFAULT_PATHS
 
@@ -88,4 +89,5 @@ class DataCovid:
             'Country': country_name
         }
         self.data = data
+        print('Reading complited!')
         return data
