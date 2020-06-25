@@ -1,12 +1,12 @@
 import numpy as np
 from abc import ABC, abstractmethod
 
-from covidprocess import DataCovid
-
 from matplotlib import pyplot as plt
 import seaborn as sns
-sns.set()
 
+from .covidprocess import DataCovid
+
+sns.set()
 
 
 class LinearFitter:
@@ -36,14 +36,15 @@ class LinearFitter:
             return X_norm, mu, sigma
 
         def compute_grads(X, A, Y):
-            """ X = np.array, X.shape = (n_x, m) - features
-                Y = np.array, Y.shape = (1, m) - true
-                A = np.array, A.shape = (1, m) - prediction
+            """
+            X = np.array, X.shape = (n_x, m) - features
+            Y = np.array, Y.shape = (1, m) - true
+            A = np.array, A.shape = (1, m) - prediction
 
-                A = dot(w.T, X) + b
-                dw = dL/da * da/dw = 1/m * dot(X, (A - Y).T)
-                db = dL/da * da/db = 1/m * sum(A - Y)
-                """
+            A = dot(w.T, X) + b
+            dw = dL/da * da/dw = 1/m * dot(X, (A - Y).T)
+            db = dL/da * da/db = 1/m * sum(A - Y)
+            """
             m = X.shape[1]
             dw = 1 / m * np.dot(X, (A - Y).T)
             db = 1 / m * np.sum(A - Y)
@@ -271,8 +272,3 @@ class NaiveLinearModel(LinearModel):
             plt.legend()
             plt.yscale('log')
         plt.show()
-
-
-data = DataCovid().read()
-linear_model = NaiveLinearModel(data)
-linear_model.plot(start_fit=60)
