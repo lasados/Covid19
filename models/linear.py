@@ -271,4 +271,10 @@ class NaiveLinearModel(LinearModel):
             plt.plot(X_all[0], Y_all[0], 'ro--', label='True values')
             plt.legend()
             plt.yscale('log')
+
+            filename = group + '_linear_' + '.png'
+            plt.savefig(filename)
+
         plt.show()
+
+

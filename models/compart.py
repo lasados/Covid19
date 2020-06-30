@@ -321,5 +321,11 @@ class SIR:
             plt.plot(X_pred_plot, Y_pred_plot, 'ro--', label='Prediction')
             plt.legend()
             plt.yscale('log')
+
+            filename = group + '_compart_' + '.png'
+            plt.savefig(filename)
+
         plt.show()
+
+
 
