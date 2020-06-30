@@ -34,10 +34,16 @@ from models.compart import SIR
 data = DataCovid().read()
 linear_model = NaiveLinearModel(data)
 linear_model.plot(start_fit=60)
+```
+![image](https://github.com/lasados/Covid19/blob/master/notebooks/images/Infected_linear_.png?raw=true)
+![image](https://github.com/lasados/Covid19/blob/master/notebooks/images/Dead_linear_.png?raw=true)
 
+```python
 model = SIR(data)
 model.plot()
 ```
+![image](https://github.com/lasados/Covid19/blob/master/notebooks/images/Infected_compart_.png?raw=true)
+![image](https://github.com/lasados/Covid19/blob/master/notebooks/images/Recovered_compart_.png?raw=true)
 
 See more details in docs of modules [here...](https://github.com/lasados/Covid19/tree/master/models)
 
