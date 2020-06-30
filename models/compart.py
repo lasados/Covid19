@@ -312,7 +312,7 @@ class SIR:
 
             # Plotting
             plt.figure(figsize=(12, 8))
-            plt.title(group + ' people')
+            plt.title(group + ' people. SIR model')
             plt.xlabel('Days from first case')
             plt.ylabel('Number of ' + group)
             plt.plot(X_true_useless_plot, Y_true_useless_plot, 'yo--', label='True not used')

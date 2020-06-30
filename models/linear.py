@@ -262,7 +262,7 @@ class NaiveLinearModel(LinearModel):
         for group in prediction:
             Y_all = np.concatenate((Y_train[group], Y_valid[group], Y_test[group]), axis=1)
             plt.figure(figsize=(12, 8))
-            plt.title(group + ' people')
+            plt.title(group + ' people. Linear model')
             plt.xlabel('Days from first case')
             plt.ylabel('Number of ' + group)
             plt.plot(X_train[0], prediction[group]['train'][0], 'go--', label='Prediction of ' + group + ' train')
