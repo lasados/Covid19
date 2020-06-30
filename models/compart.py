@@ -322,7 +322,7 @@ class SIR:
             plt.legend()
             plt.yscale('log')
 
-            filename = group + '_compart_' + '.png'
+            filename = 'images/' + group + '_compart_' + '.png'
             plt.savefig(filename)
 
         plt.show()

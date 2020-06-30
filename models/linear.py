@@ -272,7 +272,7 @@ class NaiveLinearModel(LinearModel):
             plt.legend()
             plt.yscale('log')
 
-            filename = group + '_linear_' + '.png'
+            filename = 'images/' + group + '_linear_' + '.png'
             plt.savefig(filename)
 
         plt.show()
